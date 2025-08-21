@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: redis
-      version: 17.3.11 # pin a version
+      version: 8.2.1 # pin a version
       sourceRef:
         kind: HelmRepository
         name: bitnami
