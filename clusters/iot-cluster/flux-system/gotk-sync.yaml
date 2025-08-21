@@ -11,7 +11,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: ssh://git@github.com/ethan-stone-gas/mini-iot
+  url: ssh://git@github.com/ethan-stone-gas/mini-iot-gitops
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
