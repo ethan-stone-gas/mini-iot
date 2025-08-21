@@ -8,15 +8,18 @@ spec:
   chart:
     spec:
       chart: redis
-      version: 22.0.4 # pin a version
+      version: 22.0.4
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: bitnami-oci
         namespace: flux-system
   values:
+    architecture: standalone
+    auth:
+      enabled: false
+    master:
+      persistence:
+        enabled: false
     image:
       repository: bitnami/redis
       tag: 8.2.1-debian-12-r0
-      arch: arm64
-    auth:
-      enabled: false # disable password for simplicity (not for prod!)
