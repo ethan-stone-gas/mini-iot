@@ -18,14 +18,9 @@ data:
         Refresh_Interval 5
         Skip_Long_Lines On
 
-    [FILTER]
-        Name         grep
-        Match        kube.*
-        Regex        container_name iot-app
-
     [OUTPUT]
         Name         file
         Match        *
         Path         /var/log
-        File         iot-app.log
+        File         all-containers.log
         Format       plain
