@@ -13,15 +13,6 @@ spec:
       labels:
         app: iot-app
     spec:
-      volumes:
-        # Shared volume between app and sidecar
-        - name: log-volume
-          emptyDir: {}
-        # HostPath volume so Greengrass can see logs at /var/log/iot-app.log
-        - name: host-log
-          hostPath:
-            path: /var/log/iot-app.log
-            type: FileOrCreate
       containers:
         - name: iot-app
           image: public.ecr.aws/q1n7m0l5/iot-app:v0.0.6
@@ -38,14 +29,3 @@ spec:
               value: "redis-master"
             - name: REDIS_PORT
               value: "6379"
-        - name: log-writer
-          image: busybox
-          command:
-            - sh
-            - -c
-            - "tail -n+1 -f /proc/1/fd/1 > /logs/iot-app.log"
-          volumeMounts:
-            - name: log-volume
-              mountPath: /logs
-            - name: host-log
-              mountPath: /logs/iot-app.log
