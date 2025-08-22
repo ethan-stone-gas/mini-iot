@@ -29,3 +29,15 @@ spec:
               value: "redis-master"
             - name: REDIS_PORT
               value: "6379"
+        - name: log-writer
+          image: busybox
+          command:
+            - sh
+            - -c
+            - "tail -n+1 -f /proc/1/fd/1 > /logs/iot-app.log"
+          volumeMounts:
+            - name: log-volume
+              mountPath: /logs
+            - name: host-log
+              mountPath: /logs/iot-app.log
+              subPath: iot-app.log
