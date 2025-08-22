@@ -13,8 +13,6 @@ spec:
       labels:
         app: iot-app
     spec:
-      imagePullSecrets:
-        - name: ecr-creds
       volumes:
         # Shared volume between app and sidecar
         - name: log-volume
@@ -24,7 +22,6 @@ spec:
           hostPath:
             path: /var/log/iot-app.log
             type: FileOrCreate
-    spec:
       containers:
         - name: iot-app
           image: public.ecr.aws/q1n7m0l5/iot-app:v0.0.6
