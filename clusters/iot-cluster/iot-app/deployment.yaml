@@ -49,4 +49,3 @@ spec:
               mountPath: /logs
             - name: host-log
               mountPath: /logs/iot-app.log
-              subPath: iot-app.log
