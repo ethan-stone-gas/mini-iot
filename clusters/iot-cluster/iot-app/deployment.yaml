@@ -17,7 +17,7 @@ spec:
         - name: ecr-creds
       containers:
         - name: iot-app
-          image: 914165346309.dkr.ecr.us-east-1.amazonaws.com/iot-app:v0.0.7
+          image: 914165346309.dkr.ecr.us-east-1.amazonaws.com/iot-app:v0.0.8
           ports:
             - containerPort: 8080
           readinessProbe:
