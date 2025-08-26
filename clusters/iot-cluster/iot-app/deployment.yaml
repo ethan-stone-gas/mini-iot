@@ -13,9 +13,11 @@ spec:
       labels:
         app: iot-app
     spec:
+      imagePullSecrets:
+        - name: ecr-creds
       containers:
         - name: iot-app
-          image: public.ecr.aws/q1n7m0l5/iot-app:v0.0.6
+          image: 914165346309.dkr.ecr.us-east-1.amazonaws.com/iot-app:v0.0.6
           ports:
             - containerPort: 8080
           readinessProbe:
