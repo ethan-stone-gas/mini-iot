@@ -2,6 +2,8 @@
 
 This project demonstrates how to run a lightweight Kubernetes cluster (**k3s**) inside a Multipass VM on macOS, deploy an IoT-style app, and manage updates using **Flux GitOps** with container images stored in **Amazon ECR**.
 
+EraserIO: https://app.eraser.io/workspace/HCmY3y8qNW8LyfNCYI9n
+
 ---
 
 ## 🧰 Tools Overview
